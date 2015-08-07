@@ -7,24 +7,24 @@ class Contact
 
     function __construct($name, $phone_number, $address)
     {
-        this->name = $name;
-        this->phone_number = $phone_number;
-        this->address = $address;
+        $this->name = $name;
+        $this->phone_number = $phone_number;
+        $this->address = $address;
     }
 
     function setName($new_name)
     {
-        this->name = (string) $new_name;
+        $this->name = (string) $new_name;
     }
 
     function setPhoneNumber($new_phone_number)
     {
-        this->phone_number = (string) $new_phone_number;
+        $this->phone_number = (string) $new_phone_number;
     }
 
     function setAddress($new_address)
     {
-        this->address = (string) $new_address;
+        $this->address = (string) $new_address;
     }
 
     function getName()
