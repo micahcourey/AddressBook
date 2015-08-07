@@ -11,16 +11,16 @@
 
     $app->register(new Silex\Provider\TwigServiceProvider(), array(
         'twig.path' => __DIR__.'/../views'
-));
+    ));
 
     $app->get("/", function() use ($app) {
         return $app['twig']->render('contacts.html.twig', array('contacts' => Contact::getAll()));
     });
 
-    $app->post("/create_contact", function() use ($app) {
+    $app->post("/contacts", function() use ($app) {
         $full_contact = new Contact($_POST['name'], $_POST['phone_number'], $_POST['address']);
         $full_contact->save();
-        return $app['twig']->render('create_contact.html.twig', array('new_contact' => $full_contact));
+        return $app['twig']->render('create_contact.html.twig', array('newcontact' => $full_contact));
     });
 
     $app->post("/delete_contacts", function() use ($app) {

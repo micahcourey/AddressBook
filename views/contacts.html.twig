@@ -5,18 +5,16 @@
 <body>
     <h1>Contacts List</h1>
 
-    {% if places is not empty %}
+    {% if contacts is not empty %}
         <p>List of my contacts:</p>
         <ul>
             {% for contact in contacts %}
-                <li> Name: {{ contact.getName }}</li>
-                <li> hone Number: {{ contact.getPhoneNumber }}</li>
-                <li> Address: {{ contact.getAddress }}</li>
+                <li> Name: {{ contact.getName }} | phone Number: {{ contact.getPhoneNumber }} | Address: {{ contact.getAddress }}</li>
             {% endfor %}
         </ul>
     {% endif %}
 
-    <form action='/create_contact' method='post'>
+    <form action='/contacts' method='post'>
         <label for='name'>Name:</label>
         <input id='name' name='name' type='text'><br><br>
 
